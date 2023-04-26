@@ -3,12 +3,11 @@ pub mod suite;
 use std::fmt::Debug;
 
 use self::suite::{Suite, SuiteBuilder};
-use abstract_boot::{
-    Abstract,
-    AbstractBootError,
-    boot_core::{BootError, Deploy, Mock, StateInterface, CallAs, ContractInstance},
-};
 use abstract_boot::boot_core::{BootInstantiate, BootUpload, CwEnv, TxResponse};
+use abstract_boot::{
+    boot_core::{BootError, CallAs, ContractInstance, Deploy, Mock, StateInterface},
+    Abstract, AbstractBootError,
+};
 use abstract_core::{
     ans_host::ExecuteMsgFns,
     objects::{
@@ -267,7 +266,11 @@ impl Deploy<Mock> for WynDex {
         state.set_address(RAW_EUR_PAIR, &raw_eur_pair);
 
         // set allowance
-        raw.call_as(&owner).increase_allowance(10_000u128.into(), (&raw_eur_pair).to_string(), None)?;
+        raw.call_as(&owner).increase_allowance(
+            10_000u128.into(),
+            (&raw_eur_pair).to_string(),
+            None,
+        )?;
         // owner provides some initial liquidity
         suite
             .provide_liquidity(
@@ -290,6 +293,15 @@ impl Deploy<Mock> for WynDex {
                 vec![(1, Decimal::percent(50)), (2, Decimal::one())],
             )
             .unwrap();
+
+        suite
+            .distribute_funds(
+                eur_usd_staking.clone(),
+                WYNDEX_OWNER,
+                &[coin(10_000, WYND_TOKEN)],
+            )
+            .unwrap();
+
         let wyndex = Self {
             suite,
             eur_usd_pair,
