@@ -294,12 +294,10 @@ impl Deploy<Mock> for WynDex {
             )
             .unwrap();
 
+        chain.set_balance(&eur_usd_staking, vec![coin(10_000, WYND_TOKEN)])?;
+
         suite
-            .distribute_funds(
-                eur_usd_staking.clone(),
-                WYNDEX_OWNER,
-                &[coin(10_000, WYND_TOKEN)],
-            )
+            .distribute_funds(eur_usd_staking.clone(), owner.as_str(), &[])
             .unwrap();
 
         let wyndex = Self {
