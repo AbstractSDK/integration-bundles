@@ -11,7 +11,7 @@ edition = "2021"
 wyndex-multi-hop = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex-factory = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex-pair = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
-wyndex-stake = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
+wyndex-stake = { git = "https://github.com/cosmorama/wynddex.git", rev = "v2.1.0" }
 wyndex = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 
 abstract-core = { workspace = true }
