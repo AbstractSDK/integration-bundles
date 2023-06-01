@@ -10,7 +10,7 @@ edition = "2021"
 [dependencies]
 wyndex-multi-hop = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex-factory = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
-wyndex-pair = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
+wyndex-pair = { git = "https://github.com/cosmorama/wynddex.git", rev = "v2.1.0" }
 wyndex-stake = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 
