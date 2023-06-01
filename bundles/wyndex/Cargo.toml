@@ -12,7 +12,7 @@ wyndex-multi-hop = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1
 wyndex-factory = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex-pair = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
 wyndex-stake = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
-wyndex = { git = "https://github.com/cosmorama/wynddex.git", rev = "v1.1.2" }
+wyndex = { git = "https://github.com/cosmorama/wynddex.git", rev = "v2.1.0" }
 
 abstract-core = { workspace = true }
 abstract-interface = { workspace = true, features = ["integration"] }
